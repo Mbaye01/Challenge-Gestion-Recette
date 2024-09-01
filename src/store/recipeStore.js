@@ -47,6 +47,9 @@ export const useRecipeStore = defineStore("RecipeStore", () => {
       ],
     },
   ]);
+  const del = (id) => {
+    recipes.splice(id, 1);
+  };
 
-  return { recipes };
+  return { recipes, del };
 });

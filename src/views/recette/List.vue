@@ -4,6 +4,15 @@ import { useRouter } from "vue-router";
 const store = useRecipeStore();
 const recipes = store.recipes;
 const route = useRouter();
+
+const destroy = (index) => {
+  const confirm = window.confirm(
+    `Vous êtes sûr de vouloir suprimé la recette ${recipes[index].title} ?`
+  );
+  if (confirm) {
+    store.del(index);
+  }
+};
 </script>
 
 <template>
@@ -24,7 +33,7 @@ const route = useRouter();
             Aucune Recette enregister
           </td>
         </tr>
-        <tr v-else v-for="recipe in recipes" :key="recipe.id">
+        <tr v-else v-for="(recipe, index) in recipes" :key="recipe.id">
           <td class="text-center">{{ recipe.id }}</td>
           <td class="text-center">{{ recipe.title }}</td>
           <td class="text-center">{{ recipe.type }}</td>
@@ -45,7 +54,10 @@ const route = useRouter();
             >
               <i class="fas fa-edit"></i>
             </button>
-            <button class="btn-sm btn btn-outline-danger ms-2">
+            <button
+              class="btn-sm btn btn-outline-danger ms-2"
+              @click="destroy(index)"
+            >
               <i class="fa fa-trash"></i>
             </button>
           </td>
