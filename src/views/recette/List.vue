@@ -41,7 +41,11 @@ const destroy = (index) => {
             <button
               class="btn-sm btn btn-outline-primary ms-2"
               @click="
-                route.push({ name: 'recette-show', params: { id: recipe.id } })
+                store.get(index),
+                  route.push({
+                    name: 'recette-show',
+                    params: { id: recipe.id },
+                  })
               "
             >
               <i class="fas fa-eye"></i>
@@ -49,7 +53,10 @@ const destroy = (index) => {
             <button
               class="btn-sm btn btn-outline-secondary ms-2"
               @click="
-                route.push({ name: 'recette-edit', params: { id: recipe.id } })
+                route.push({
+                  name: 'recette-edit',
+                  params: { id: recipe.id },
+                })
               "
             >
               <i class="fas fa-edit"></i>

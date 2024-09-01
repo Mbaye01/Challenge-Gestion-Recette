@@ -1,7 +1,8 @@
 import { defineStore } from "pinia";
-import { reactive } from "vue";
+import { reactive, ref } from "vue";
 
 export const useRecipeStore = defineStore("RecipeStore", () => {
+  //variables
   const recipes = reactive([
     {
       id: 1,
@@ -47,9 +48,16 @@ export const useRecipeStore = defineStore("RecipeStore", () => {
       ],
     },
   ]);
+  const val = ref(0)
+
+
+
+  //Functions
   const del = (id) => {
     recipes.splice(id, 1);
   };
-
-  return { recipes, del };
+  const get = (index) => {
+    val.value = index
+  }
+  return { recipes, val, del, get };
 });
