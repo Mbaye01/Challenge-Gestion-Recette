@@ -32,7 +32,7 @@ onMounted(() => {
       aria-hidden="false"
     >
       <div
-        class="modal-dialog modal-dialog-scrollable modal-dialog-centered modal"
+        class="modal-dialog modal-dialog-scrollable modal-dialog-centered"
         role="document"
       >
         <div class="modal-content">
@@ -77,8 +77,8 @@ onMounted(() => {
             <button
               type="button"
               class="btn btn-secondary"
+              data-bs-dismiss="modal"
               @click="route.push({ name: 'recette' })"
-              data-bs-dismiss="recette"
             >
               Fermer
             </button>
