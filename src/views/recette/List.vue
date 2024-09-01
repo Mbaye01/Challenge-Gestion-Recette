@@ -1,4 +1,56 @@
 <script setup>
+import { useRecipeStore } from "@store/recipeStore";
+import { useRouter } from "vue-router";
+const store = useRecipeStore();
+const recipes = store.recipes;
+const route = useRouter();
 </script>
 
-<template>List</template>
+<template>
+  <div class="container">
+    <h1 class="mt-3 mb-2 text-center fw-bold">Liste de Recettes</h1>
+    <table
+      class="table table-success table-striped-columns table-bordered m-auto"
+    >
+      <thead>
+        <th scope="col" class="text-center">N°</th>
+        <th scope="col" class="text-center">Titres</th>
+        <th scope="col" class="text-center">Type</th>
+        <th scope="col" class="text-center">Actions</th>
+      </thead>
+      <tbody>
+        <tr v-if="recipes.length === 0">
+          <td colspan="4" class="text-danger text-center fw-bold">
+            Aucune Recette enregister
+          </td>
+        </tr>
+        <tr v-else v-for="recipe in recipes" :key="recipe.id">
+          <td class="text-center">{{ recipe.id }}</td>
+          <td class="text-center">{{ recipe.title }}</td>
+          <td class="text-center">{{ recipe.type }}</td>
+          <td class="text-center">
+            <button
+              class="btn-sm btn btn-outline-primary ms-2"
+              @click="
+                route.push({ name: 'recette-show', params: { id: recipe.id } })
+              "
+            >
+              <i class="fas fa-eye"></i>
+            </button>
+            <button
+              class="btn-sm btn btn-outline-secondary ms-2"
+              @click="
+                route.push({ name: 'recette-edit', params: { id: recipe.id } })
+              "
+            >
+              <i class="fas fa-edit"></i>
+            </button>
+            <button class="btn-sm btn btn-outline-danger ms-2">
+              <i class="fa fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</template>
