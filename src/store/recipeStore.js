@@ -48,16 +48,26 @@ export const useRecipeStore = defineStore("RecipeStore", () => {
       ],
     },
   ]);
-  const val = ref(0)
-
-
+  const val = ref(0);
+  const newRecipe = ref({
+    title: "",
+    type: "",
+    ingredients: [],
+  });
 
   //Functions
   const del = (id) => {
     recipes.splice(id, 1);
   };
   const get = (index) => {
-    val.value = index
-  }
-  return { recipes, val, del, get };
+    val.value = index;
+    newRecipe.value = recipes[index];
+  };
+  const edit = (index) => {
+    recipes[index].id = index + 1;
+    recipes[index].title = newRecipe.value.title;
+    recipes[index].type = newRecipe.value.type;
+    recipes[index].ingredients = newRecipe.value.ingredients.split(",");
+  };
+  return { recipes, val, newRecipe, del, get, edit };
 });
