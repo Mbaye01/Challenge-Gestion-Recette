@@ -18,7 +18,12 @@ const destroy = (index) => {
 <template>
   <div class="container">
     <h1 class="mt-3 mb-2 text-center fw-bold">Liste de Recettes</h1>
-    <button class="btn btn-primary mt-4 mb-2">  <i class="fas fa-plus me-1"></i>Nouvelle Recette</button>
+    <button
+      class="btn btn-primary mt-4 mb-2"
+      @click="route.push({ name: 'recette-add' })"
+    >
+      <i class="fas fa-plus me-1"></i>Nouvelle Recette
+    </button>
     <table
       class="table table-success table-striped-columns table-bordered m-auto"
     >
