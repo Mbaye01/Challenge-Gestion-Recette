@@ -37,7 +37,7 @@ onMounted(() => {
       >
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title fw-bold text-center" id="modalTitleId">
+            <h5 class=" text-center fw-bold" id="modalTitleId">
               Details du recette
             </h5>
             <button

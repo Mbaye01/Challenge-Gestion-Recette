@@ -10,7 +10,7 @@ const newRecipe = store.newRecipe;
 
 <template>
   <div class="container">
-    <h1 class="text-center">Editon</h1>
+    <h1 class="mt-3 mb-2 text-center fw-bold">Modification de la Recette</h1>
     <div class="input-group mb-3 container">
       <label class="input-group-text">Titre : </label>
       <input type="text" class="form-control" v-model="newRecipe.title" />

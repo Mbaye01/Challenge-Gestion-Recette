@@ -15,7 +15,7 @@ const newRecipe = ref({
   <div class="container">
     <h1 class="mt-3 mb-2 text-center fw-bold">Ajouter une Nouvelle Recette</h1>
     <div class="container">
-      <h1 class="text-center">Editon</h1>
+ 
       <div class="input-group mb-3 container">
         <label class="input-group-text">Titre : </label>
         <input type="text" class="form-control" v-model="newRecipe.title" />
