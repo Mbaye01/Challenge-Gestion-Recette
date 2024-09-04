@@ -16,7 +16,7 @@ Cette application de gestion de recettes est développée en Vue.js 3 en utilisa
 - **Gestion de version avec Git** : Le projet est versionné avec Git. Chaque changement est accompagné de messages de commit appropriés.
 - **Déploiement sur Vercel** : L'application est déployée sur Vercel. [Lien vers l'application](https://gestion-recette-beta.vercel.app/)
 - **Conteneurisation avec Docker** : Une image Docker de l'application est créée après le déploiement sur Vercel.
-- **Publication sur Docker Hub** : L'image Docker est publiée sur Docker Hub. [Lien vers l'image Docker](#)
+- **Publication sur Docker Hub** : L'image Docker est publiée sur Docker Hub. [Lien vers l'image Docker](https://hub.docker.com/r/harounatraore/recipe-app)
 
 ## Prérequis
 
