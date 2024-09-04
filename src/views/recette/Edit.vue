@@ -16,8 +16,11 @@ const newRecipe = store.newRecipe;
       <input type="text" class="form-control" v-model="newRecipe.title" />
     </div>
     <div class="input-group mb-3 container">
-      <label class="input-group-text">Type : </label>
-      <input type="text" class="form-control" v-model="newRecipe.type" />
+      <select class="input-group-text" v-model="newRecipe.type">
+        <option class="form-control" value="Entrée">Entrée</option>
+        <option class="form-control" value="Dessert">Dessert</option>
+        <option class="form-control" value="Plat">Plat</option>
+      </select>
     </div>
     <div class="input-group mb-3 container">
       <label class="input-group-text">Ingredients : </label>
