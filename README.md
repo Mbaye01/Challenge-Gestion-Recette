@@ -23,7 +23,6 @@ Cette application de gestion de recettes est développée en Vue.js 3 en utilisa
 
    ```bash
    https://github.com/Mbaye01/Challenge-Gestion-Recette.git
-
    ```
 
 2. Accédez au répertoire du projet :
@@ -43,11 +42,19 @@ Cette application de gestion de recettes est développée en Vue.js 3 en utilisa
    npm run serve
    ```
 
-1. Pour exécuter le conteneur Docker :
+   ## Deploiement
 
-   ```bash
-   docker run -d -p 3000:81 recipe-app
-   ```
+- Vercel
+
+```
+https://challenge-gestion-recette.vercel.app/
+```
+
+- Dockerhub-image
+
+```
+https://hub.docker.com/r/mbayedev/gestion-recette
+```
 
 ## Auteur
 
