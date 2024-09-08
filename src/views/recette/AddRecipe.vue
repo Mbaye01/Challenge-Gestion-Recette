@@ -21,7 +21,6 @@ const newRecipe = ref({
       </div>
       <div class="input-group mb-3 container">
         <select class="input-group-text" v-model="newRecipe.type">
-          <option class="form-control" selected>Choisir le type</option>
           <option class="form-control" value="Entrée">Entrée</option>
           <option class="form-control" value="Dessert">Dessert</option>
           <option class="form-control" value="Plat">Plat</option>

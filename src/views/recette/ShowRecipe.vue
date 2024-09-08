@@ -35,10 +35,10 @@ onMounted(() => {
         class="modal-dialog modal-dialog-scrollable modal-dialog-centered"
         role="document"
       >
-        <div class="modal-content">
+        <div class="modal-content bg-dark text-white">
           <div class="modal-header">
             <h5 class=" text-center fw-bold" id="modalTitleId">
-              Details du recette
+              Détails de la recette
             </h5>
             <button
               type="button"
@@ -53,15 +53,14 @@ onMounted(() => {
               <span class="fw-bold">N° : </span>{{ recipes[store.val].id }}
             </p>
             <p v-if="recipes[store.val].title">
-              <span class="fw-bold">Titre : </span
-              >{{ recipes[store.val].title }}
+              <span class="fw-bold">Titre : </span>{{ recipes[store.val].title }}
             </p>
             <p v-if="recipes[store.val].type">
               <span class="fw-bold">Type : </span>{{ recipes[store.val].type }}
             </p>
             <div v-if="recipes[store.val].ingredients">
               <thead>
-                <th colspan="{{ recipes.ingredients.length }}">Ingredient</th>
+                <th colspan="{{ recipes.ingredients.length }}">Ingrédient</th>
               </thead>
               <tbody>
                 <tr
